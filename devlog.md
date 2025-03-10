@@ -30,3 +30,9 @@ There will be three separate program that works togethe:
             - All three argument should have error output if passkey is not set
             - QUIT to exit the program
     - And start reserach about how to create Driver program and how it work in Java.
+
+# 3-10-2025 5:30pm
+    - I have learnt how to implement Vigenère cypher by shifting words according to the letters the user used as passkey.
+    - some problem I encountered  how to return the the result message after the encryption is done. 
+    - I have tested the code and it seems work well. I need to develop the driver program and see it works perfectrly as intended and make the necessary adjustment accordint to it.
+
