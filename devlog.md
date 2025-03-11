@@ -36,3 +36,10 @@ There will be three separate program that works togethe:
     - some problem I encountered  how to return the the result message after the encryption is done. 
     - I have tested the code and it seems work well. I need to develop the driver program and see it works perfectrly as intended and make the necessary adjustment accordint to it.
 
+
+# 3-11-2025 10:15am
+    - so far I have successfully run both logger and encryption program independently. 
+    - Today I am going to learn how interprocess work and how to open two processor at the same time and how to able to make them connect them by using driver program.
+    - I need to research how pipes work and how to use them in java.
+    - How to make the driver as the main operater for both logger and encryption.
+    - I will try to program the pipe part of the program and test it. 
