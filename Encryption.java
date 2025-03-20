@@ -15,14 +15,14 @@ public class Encryption {
 
     public String encrypt(String message) {
         if (passkey.isEmpty()) {
-            return "ERROR Passkey not set";
+            return "ERROR passoword is not set";
         }
         return "RESULT " + processMessage(message, true);
     }
 
     public String decrypt(String message) {
         if (passkey.isEmpty()) {
-            return "ERROR Passkey not set";
+            return "ERROR password is not set";
         }
         return "RESULT " + processMessage(message, false);
     }
@@ -56,22 +56,22 @@ public class Encryption {
         switch (parts[0].toUpperCase()) {
             case "PASS":
                 if (parts.length < 2) {
-                    return "ERROR Passkey required.";
+                    return "Password required.";
                 }
                 setPasskey(parts[1]);
                 return "RESULT";
             case "ENCRYPT":
                 if (parts.length < 2) {
-                    return "ERROR Message required for encryption.";
+                    return "ERROR Password not set";
                 }
                 return encrypt(parts[1]);
             case "DECRYPT":
                 if (parts.length < 2) {
-                    return "ERROR Message required for decryption.";
+                    return "ERROR password not set";
                 }
                 return decrypt(parts[1]);
             case "QUIT":
-                return "RESULT Exiting Vigenère cipher.";
+                return "Exiting the program. ";
             default:
                 return "ERROR Unknown command.";
         }

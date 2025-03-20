@@ -42,4 +42,10 @@ There will be three separate program that works togethe:
     - Today I am going to learn how interprocess work and how to open two processor at the same time and how to able to make them connect them by using driver program.
     - I need to research how pipes work and how to use them in java.
     - How to make the driver as the main operater for both logger and encryption.
-    - I will try to program the pipe part of the program and test it. 
+    - I will try to program the pipe part of the program and test it.
+# 3-20-2025 8:15 AM
+    - I have been reading how to use pipe to make two programs communicate each othe.
+    - I have been reading about the process class and how to start other programs based on using the process class.
+    - I have developed some part of the driver program that will start the logger and encryption and communicate with them.
+    - The process class in java used to create and manage system process. It allows a java program to start external programs, communicate with them through commandline and monitor it. It serve as OS.
+
