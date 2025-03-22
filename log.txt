@@ -1,0 +1,9 @@
+2025-03-20 09:05 [START] Driver started
+2025-03-20 09:05 [COMMAND] password
+2025-03-20 09:05 [PASS] secret
+2025-03-20 09:06 [COMMAND] encrypt
+2025-03-20 09:11 [START] Driver started
+2025-03-20 09:11 [COMMAND] password
+2025-03-20 09:11 [PASS] hello
+2025-03-20 09:11 [COMMAND] hell
+2025-03-20 09:11 [COMMAND] encrypt

@@ -48,4 +48,7 @@ There will be three separate program that works togethe:
     - I have been reading about the process class and how to start other programs based on using the process class.
     - I have developed some part of the driver program that will start the logger and encryption and communicate with them.
     - The process class in java used to create and manage system process. It allows a java program to start external programs, communicate with them through commandline and monitor it. It serve as OS.
-
+# 3-22-2025 9:50
+    - I have been devloped the three program and tested them. I have some java.Lang error. I am planning to fix it and propare for the submition.
+    - The Driver program starts both the logger and the encryption program.
+    - It has java.lang problem when I try to excute the instruciton and try to fix it.
