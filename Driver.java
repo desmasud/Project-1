@@ -19,17 +19,17 @@ public class Driver {
         Scanner scanner = null;
 
         try {
-            // Start Logger and Encryption processes
+            
             loggerProcess = Runtime.getRuntime().exec(new String[]{"java", "-cp", ".", "Logger", logFile});
             encryptionProcess = Runtime.getRuntime().exec(new String[]{"java", "-cp", ".", "Encryption"});
 
-            // Check if processes started correctly
+            
             if (loggerProcess == null || encryptionProcess == null) {
                 System.out.println("Failed to start Logger or Encryption process.");
                 System.exit(1);
             }
 
-            // Streams for communication
+            
             loggerWriter = new PrintWriter(loggerProcess.getOutputStream(), true);
             encryptionWriter = new PrintWriter(encryptionProcess.getOutputStream(), true);
             encryptionReader = new BufferedReader(new InputStreamReader(encryptionProcess.getInputStream()));
@@ -66,7 +66,7 @@ public class Driver {
                         encryptionWriter.println("QUIT");
                         loggerWriter.println("QUIT");
 
-                        // Close streams and processes
+                        System.out.println("Exiting the program.");
                         return;
 
                     default:
@@ -93,8 +93,11 @@ public class Driver {
             System.out.println("Invalid input. Only letters allowed.");
             return;
         }
-        encryptionWriter.println("PASS " + password);
-        loggerWriter.println("PASS " + password);
+        encryptionWriter.println("PASSKEY " + password);
+        encryptionWriter.flush();
+        loggerWriter.println("PASSKEY " + password);
+        loggerWriter.flush();
+
         System.out.println("Password set.");
     }
 
@@ -105,29 +108,37 @@ public class Driver {
         }
         System.out.print("Enter choice or new text: ");
         String input = scanner.nextLine().trim();
-
+    
         // Select from history if a number is entered
         if (input.matches("\\d+") && Integer.parseInt(input) > 0 && Integer.parseInt(input) <= history.size()) {
             input = history.get(Integer.parseInt(input) - 1);
         }
-
+    
         if (!input.matches("[a-zA-Z]+")) {
             System.out.println("Invalid input. Only letters allowed.");
             return;
         }
-
+    
+        // Send command to Encryption process
         encryptionWriter.println(operation + " " + input);
+        encryptionWriter.flush();
+        loggerWriter.println(operation + " " + input);
+        loggerWriter.flush();
+    
+        // Read response from Encryption process
         String result = encryptionReader.readLine();
-
-        if (result.startsWith("RESULT")) {
-            result = result.substring(7); // Remove "RESULT " prefix
+        if (result != null && !result.isEmpty()) {
             System.out.println("Result: " + result);
             history.add(result);
             loggerWriter.println(operation + " " + result);
+            loggerWriter.flush();
         } else {
-            System.out.println(result); // Print error message
+            System.out.println("No response from Encryption process.");
+            loggerWriter.println("ERROR No response from Encryption process.");
+            loggerWriter.flush();
         }
     }
+    
 
     private static void showHistory(List<String> history) {
         System.out.println("\nHistory:");

@@ -54,7 +54,7 @@ public class Encryption {
         }
 
         switch (parts[0].toUpperCase()) {
-            case "PASS":
+            case "PASSKEY":
                 if (parts.length < 2) {
                     return "Password required.";
                 }

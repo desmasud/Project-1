@@ -52,3 +52,9 @@ There will be three separate program that works togethe:
     - I have been devloped the three program and tested them. I have some java.Lang error. I am planning to fix it and propare for the submition.
     - The Driver program starts both the logger and the encryption program.
     - It has java.lang problem when I try to excute the instruciton and try to fix it.
+
+
+# 3-25-2025
+   - I will be able to finished the driver program. the challenging was handling the command line from the driver to the encryption. 
+   - I have researched and tried to fix it.
+   - I have learnt how to use pipe to communicate two programmers each othe in java
